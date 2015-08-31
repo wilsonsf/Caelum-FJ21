@@ -36,8 +36,7 @@ public class ContatoDao {
 			stmt.close();
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new DAOException(e);
 		}
 	}
 
@@ -59,12 +58,12 @@ public class ContatoDao {
 				Calendar dataNascimento = Calendar.getInstance();
 				dataNascimento.setTime(rs.getDate("dataNascimento"));
 				contato.setDataNascimento(dataNascimento);
-				
+
 				contatos.add(contato);
 			}
 			return contatos;
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+			throw new DAOException(e);
 		}
 	}
 }
