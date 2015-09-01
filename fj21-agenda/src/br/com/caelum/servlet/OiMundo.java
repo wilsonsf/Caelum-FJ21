@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-@WebServlet("/oi")
+//@WebServlet("/oi")
+@WebServlet(name = "OiMundo", urlPatterns = {"/oi", "/ola"})
 public class OiMundo extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request,
