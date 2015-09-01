@@ -32,9 +32,9 @@ public class AdicionaContatoServlet extends HttpServlet {
 			dataNascimentoCalendar = Calendar.getInstance();
 			dataNascimentoCalendar.setTime(date);
 		} catch (ParseException e) {
-			out.println("Erro de conversão da data");
+//			out.println("Erro de conversão da data");
 			System.out.println(e);
-			return;
+			throw new RuntimeException(e);
 		}
 
 		Contato contato = new Contato();
