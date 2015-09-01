@@ -20,14 +20,17 @@ import br.com.caelum.agenda.modelo.Contato;
 public class AdicionaContatoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request,
+	@Override
+	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-		
-		
+
 		Calendar dataNascimentoCalendar = null;
 		try {
-			Date date = new SimpleDateFormat("dd/MM/yyyy").parse(request.getParameter("birthDate"));
+			Date date = new SimpleDateFormat(
+			   "yyyy-MM-dd"
+			// "dd/MM/yyyy"
+			).parse(request.getParameter("birthDate"));
 			dataNascimentoCalendar = Calendar.getInstance();
 			dataNascimentoCalendar.setTime(date);
 		} catch (ParseException e) {
@@ -35,20 +38,28 @@ public class AdicionaContatoServlet extends HttpServlet {
 			System.out.println(e);
 			return;
 		}
-		
+
 		Contato contato = new Contato();
 		contato.setNome(request.getParameter("name"));
 		contato.setEmail(request.getParameter("email"));
 		contato.setEndereco(request.getParameter("address"));
 		contato.setDataNascimento(dataNascimentoCalendar);
-		
+
 		ContatoDao dao = new ContatoDao();
 		dao.adiciona(contato);
-		
+
 		out.println("<html>");
 		out.println("<body>");
-		out.println("<h1>Contato " + contato.getNome() + " adicionado com sucesso");
+		out.println("<h1>Contato " + contato.getNome()
+				+ " adicionado com sucesso");
 		out.println("</body>");
 		out.println("</html>");
 	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		doPost(req, resp);
+	}
+
 }

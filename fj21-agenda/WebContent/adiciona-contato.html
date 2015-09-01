@@ -2,24 +2,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FJ-21: Adicionar contato</title>
 </head>
 <body>
 	<h1 style="bottom-border: 1px black solid">Adiciona Contatos</h1>
-	<form action="adicionaContato" method="GET">
+	<form action="adicionaContato" method="POST">
 		<div>
-			<label for="name">Nome</label> <input type="text" name="name"><br />
+			<label for="name">Nome</label> <input type="text" name="name" required autofocus><br />
 		</div>
 		<div>
-			<label for="email">Email</label> <input type="text" name="email"><br />
+			<label for="email">Email</label> <input type="email" name="email" placeholder="email@exemplo.com" required><br />
 		</div>
 		<div>
 			<label for="address">Endereço</label> <input type="text"
-				name="address"><br />
+				name="address" required><br />
 		</div>
 		<div>
-			<label for="birthDate">Data Nascimento</label> <input type="text"
-				name="birthDate"><br />
+			<label for="birthDate">Data Nascimento</label> <input type="date"
+				name="birthDate" required><br />
 		</div>
 		<div>
 			<input type="submit" value="Gravar">
