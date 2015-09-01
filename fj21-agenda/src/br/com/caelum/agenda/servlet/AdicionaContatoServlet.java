@@ -27,10 +27,8 @@ public class AdicionaContatoServlet extends HttpServlet {
 
 		Calendar dataNascimentoCalendar = null;
 		try {
-			Date date = new SimpleDateFormat(
-			   "yyyy-MM-dd"
-			// "dd/MM/yyyy"
-			).parse(request.getParameter("birthDate"));
+			Date date = new SimpleDateFormat("yyyy-MM-dd").parse(request
+					.getParameter("birthDate"));
 			dataNascimentoCalendar = Calendar.getInstance();
 			dataNascimentoCalendar.setTime(date);
 		} catch (ParseException e) {

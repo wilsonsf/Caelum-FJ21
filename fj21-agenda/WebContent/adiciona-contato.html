@@ -3,31 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/bootstrap.css">
+<link rel="stylesheet" href="assets/css/bootstrap-flatly.css">
 <title>FJ-21: Adicionar contato</title>
 </head>
 <body>
-	<h1 style="bottom-border: 1px black solid">Adiciona Contatos</h1>
-	<form action="adicionaContato" method="POST">
-		<div>
-			<label for="name">Nome</label> <input type="text" name="name" required autofocus><br />
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Adiciona Contatos</h1>
 		</div>
-		<div>
-			<label for="email">Email</label> <input type="email" name="email" placeholder="email@exemplo.com" required><br />
+	</div>
+	<div class="container">
+		<div class="panel">
+			<form action="adicionaContato" method="POST">
+				<fieldset>
+					<legend>Dados do contato</legend>
+					<div class="form-group">
+						<label for="name">Nome</label>
+						<div class="input-group">
+							<input type="text" name="name" required autofocus>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<div class="input-group">
+							<input type="email" name="email" placeholder="email@exemplo.com"
+								required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="address">Endereço</label>
+						<div class="input-group">
+							<input type="text" name="address" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="birthDate">Data Nascimento</label>
+						<div class="input-group">
+							<input type="date" name="birthDate" required>
+						</div>
+					</div>
+					<div>
+						<button type="submit" class="btn btn-primary btn-lg">
+							Gravar</button>
+					</div>
+				</fieldset>
+			</form>
 		</div>
-		<div>
-			<label for="address">Endereço</label> <input type="text"
-				name="address" required><br />
-		</div>
-		<div>
-			<label for="birthDate">Data Nascimento</label> <input type="date"
-				name="birthDate" required><br />
-		</div>
-		<div>
-			<input type="submit" value="Gravar">
-			<!-- <button type="submit">
-			Enviar
-		</button> -->
-		</div>
-	</form>
+		<!-- fim .panel -->
+	</div>
+	<!-- fim .container -->
 </body>
 </html>
