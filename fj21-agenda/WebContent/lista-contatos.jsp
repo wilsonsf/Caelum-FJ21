@@ -21,10 +21,14 @@
 		</thead>
 		<tbody>
 			<c:forEach var="contato" items="${dao.lista}" varStatus="id">
-				<tr style="background: #${id.count % 2 == 0 ? 'AE8' : 'FFF'}">
+				<tr style="background: ${id.count% 2== 0? '#AE8': '#FFF'}">
 					<td>${id.count}</td>
 					<td>${contato.nome}</td>
-					<td>${contato.email}</td>
+					<td>
+					<c:if test="${not empty contato.email}">
+						<a href="mailto:${contato.email}">${contato.email}</a>
+					</c:if>
+					</td>
 					<td>${contato.endereco}</td>
 					<td>${contato.dataNascimento.time}</td>
 				</tr>
