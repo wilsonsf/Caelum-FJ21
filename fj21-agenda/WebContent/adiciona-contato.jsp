@@ -1,19 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/bootstrap.css">
-<title>FJ-21: Adicionar contato</title>
-</head>
-<body>
-	<div class="jumbotron">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:import url="cabecalho.jsp" />
+	<header class="header">
 		<div class="container">
 			<h1>Adiciona Contatos</h1>
 		</div>
-	</div>
+	</header>
 	<div class="container">
 		<div class="panel">
 			<form action="adicionaContato" method="POST">
@@ -54,5 +47,4 @@
 		<!-- fim .panel -->
 	</div>
 	<!-- fim .container -->
-</body>
-</html>
+<c:import url="rodape.jsp" />
