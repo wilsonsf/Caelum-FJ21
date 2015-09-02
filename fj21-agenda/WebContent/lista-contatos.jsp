@@ -3,7 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:import url="cabecalho.jsp" />
-<table style="border: 1px solid black">
+<div class="container">
+<table class="table table-responsive">
 	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao" />
 	<thead>
 		<tr>
@@ -14,7 +15,7 @@
 			<th>Data Nascimento</th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody class="table-striped">
 		<c:forEach var="contato" items="${dao.lista}" varStatus="id">
 			<tr style="background: ${id.count% 2== 0? '#AE8': '#FFF'}">
 				<td>${id.count}</td>
@@ -32,6 +33,5 @@
 		</c:forEach>
 	</tbody>
 </table>
+</div> <!-- fim .container -->
 <c:import url="rodape.jsp" />
-</body>
-</html>
