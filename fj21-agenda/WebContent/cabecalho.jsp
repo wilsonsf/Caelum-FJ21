@@ -7,10 +7,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+
+<%-- use c:set within request scope with comma separated values --%>
 <c:if test="${not empty cabecalhoCSS }">
-	<link rel="stylesheet" href="assets/css/${cabecalhoCSS}">
+	<c:forTokens items="${cabecalhoCSS}" delims="," var="item">
+    	<link rel="stylesheet" href="assets/css/${item}">
+	</c:forTokens>
 </c:if>
-<title>${tituloDaPagina}</title>
+
+<c:if test="${not empty cabecalhoScripts }">
+	<c:forTokens items="${cabecalhoScripts}" delims="," var="item">
+    	<link rel="stylesheet" href="assets/js/${item}">
+	</c:forTokens>
+</c:if>
+
+
+	<title>${tituloDaPagina}</title>
 </head>
 <body>
 	<header>
