@@ -7,6 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+<c:if test="${not empty cabecalho_css }"> 
+	<link rel="stylesheet" href="assets/css/${cabecalho_css}">
+</c:if>
 <title>Insert title here</title>
 </head>
 <body>

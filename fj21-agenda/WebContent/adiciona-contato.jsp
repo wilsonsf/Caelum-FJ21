@@ -1,12 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<c:set var="cabecalho_css" value="js/jquery.css" scope="request" />
 <c:import url="cabecalho.jsp" />
-	<header class="header">
-		<div class="container">
-			<h1>Adiciona Contatos</h1>
-		</div>
-	</header>
+
 	<div class="container">
 		<div class="panel">
 			<form action="adicionaContato" method="POST">
