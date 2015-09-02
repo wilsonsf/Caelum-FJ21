@@ -2,7 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<c:set var="cabecalho_css" value="js/jquery.css" scope="request" />
+<c:set var="cabecalhoCSS" value="js/jquery.css" scope="request" />
+<c:set var="tituloDaPagina" value="FJ-21 Agenda: Adiciona Contato" scope="request" />
 <c:import url="cabecalho.jsp" />
 
 	<div class="container">

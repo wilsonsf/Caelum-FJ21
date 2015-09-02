@@ -7,18 +7,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/css/bootstrap.css">
-
-<c:if test="${not empty cabecalho_css }"> 
-	<link rel="stylesheet" href="assets/css/${cabecalho_css}">
+<c:if test="${not empty cabecalhoCSS }">
+	<link rel="stylesheet" href="assets/css/${cabecalhoCSS}">
 </c:if>
-<title>Insert title here</title>
+<title>${tituloDaPagina}</title>
 </head>
 <body>
-	<header><div class="container">
-		<h1>
-			<img src="<c:url value='/assets/images/caelum.png' />" />
-		</h1>
-		<h2 style="border-bottom: black 1px solid">Agenda de Contatos do
-			Wilson</h2>
-			</div>
+	<header>
+		<div class="container">
+			<h1>
+				<img src="<c:url value='/assets/images/caelum.png' />" />
+			</h1>
+			<h2 style="border-bottom: black 1px solid">Agenda de Contatos do
+				Wilson</h2>
+		</div>
 	</header>
