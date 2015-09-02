@@ -10,7 +10,7 @@
 <body>
 	<header>
 		<h1>
-			<img src="assets/imagens/caelum.png" />
+			<img src="<c:url value='/assets/imagens/caelum.png' />" />
 		</h1>
 		<h2 style="border-bottom: black 1px solid">Agenda de Contatos do
 			Wilson</h2>
