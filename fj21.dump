@@ -29,7 +29,7 @@ CREATE TABLE `contatos` (
   `endereco` varchar(255) DEFAULT NULL,
   `dataNascimento` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `contatos` (
 
 LOCK TABLES `contatos` WRITE;
 /*!40000 ALTER TABLE `contatos` DISABLE KEYS */;
-INSERT INTO `contatos` VALUES (1,'Caelum','contato@caelum.com.br','R. Vergueiro 3185 cj57','2015-08-31'),(2,'Wilson','email@servidor.com','Rua Depois da outra, 123','1989-11-28'),(3,'Wilson','email@servidor.com','Rua Depois da outra, 123','1989-11-28'),(4,'Wilson','email@servidor.com','Rua Depois da outra, 123','1989-11-28'),(5,'Wilson','email@servidor.com','Rua Depois da outra, 123','1989-11-30'),(6,'Cassio',NULL,NULL,'1970-01-28'),(7,'Email em branco','',NULL,'1970-01-28'),(8,'Nome','email@servidor.com','Rua Vergueiro 20','2015-09-01'),(9,'Nome Teste','email@servidor.com','Rua Vergueiro 20','2015-09-01'),(10,'Nome Teste','email@servidor.com','Rua Vergueiro 20','2015-09-01'),(11,'Nome Teste','email@servidor.com','Rua Vergueiro 20','2015-09-01'),(12,'Nome Teste','email@servidor.com','Rua Vergueiro 20','2015-09-01'),(13,'Nome Teste','email@servidor.com','Rua Vergueiro 20','2015-09-01'),(14,'Teste','teste@servidor.com','Rua Vergueiro 93','2015-09-03');
+INSERT INTO `contatos` VALUES (1,'Caelum','contato@caelum.com.br','R. Vergueiro 3185 cj57','2015-08-31'),(3,'Wilson','email@servidor.com','Rua Depois da outra, 123','1989-11-28'),(5,'Wilson','email@servidor.com','Rua Depois da outra, 123','1989-11-30'),(7,'Email em branco','',NULL,'1970-01-28'),(15,'TesteLogic','email@servidor.com','Rua Vergueiro 28','2015-09-03'),(16,'TesteLogic','email@servidor.com','Rua Vergueiro 28','2015-09-03'),(17,'TesteLogic','email@servidor.com','Rua Vergueiro 28','2015-09-03'),(18,'Zoeira','zoeira@servidor.com','Rua Vergueiro 03','2015-09-03');
 /*!40000 ALTER TABLE `contatos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,6 +66,31 @@ LOCK TABLES `funcionarios` WRITE;
 /*!40000 ALTER TABLE `funcionarios` DISABLE KEYS */;
 /*!40000 ALTER TABLE `funcionarios` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `tarefas`
+--
+
+DROP TABLE IF EXISTS `tarefas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tarefas` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(255) DEFAULT NULL,
+  `finalizado` tinyint(1) DEFAULT NULL,
+  `dataFinalizacao` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tarefas`
+--
+
+LOCK TABLES `tarefas` WRITE;
+/*!40000 ALTER TABLE `tarefas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tarefas` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -76,4 +101,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-09-03 12:37:08
+-- Dump completed on 2015-09-03 16:31:32

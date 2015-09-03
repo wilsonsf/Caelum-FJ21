@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="assets/css/tarefas.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>FJ21 Tarefa: Adicionar Tarefa</title>
 </head>
