@@ -13,14 +13,23 @@ import java.util.List;
 import br.com.caelum.agenda.ConnectionFactory;
 import br.com.caelum.agenda.modelo.Contato;
 
-public class ContatoDao {
+public class ContatoDao implements GenericDao {
 	private Connection connection;
 
 	public ContatoDao() {
 		this.connection = new ConnectionFactory().getConnection();
 	}
 
-	public void adiciona(Contato contato) {
+	public ContatoDao(Connection connection) {
+		this.connection = connection;
+	}
+
+	@Override
+	public void adiciona(Object obj) {
+		if (!(obj instanceof Contato)) {
+			return;
+		}
+		Contato contato = (Contato) obj;
 		String sql = "INSERT INTO contatos "
 				+ "(nome,email,endereco,dataNascimento) " + "VALUES (?,?,?,?)";
 
@@ -59,7 +68,7 @@ public class ContatoDao {
 		}
 	}
 
-	public Contato pesquisa(int id) {
+	public Contato pesquisa(long id) {
 		PreparedStatement stmt;
 		try {
 			stmt = this.connection
@@ -82,7 +91,13 @@ public class ContatoDao {
 		}
 	}
 
-	public void altera(Contato contato) {
+	@Override
+	public void altera(Object obj) {
+		if (!(obj instanceof Contato)) {
+			return;
+		}
+		Contato contato = (Contato) obj;
+
 		String sql = "UPDATE contatos SET nome=?, email=?, endereco=?, dataNascimento=? where id=?";
 
 		try {
@@ -101,12 +116,17 @@ public class ContatoDao {
 		}
 	}
 
-	public void remove(Contato contato) {
+	@Override
+	public void remove(Object obj) {
+		if (!(obj instanceof Contato)) {
+			return;
+		}
+		Contato contato = (Contato) obj;
 		try {
 			PreparedStatement stmt = connection
 					.prepareStatement("DELETE FROM contatos WHERE id=?");
 			stmt.setLong(1, contato.getId());
-			
+
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
