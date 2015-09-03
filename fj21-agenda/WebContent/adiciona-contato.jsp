@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ taglib tagdir="/WEB-INF/tags" prefix="caelum" %>
 <c:set var="cabecalhoCSS" scope="request">
 	jquery
 </c:set>
@@ -18,9 +18,9 @@
 			<fieldset>
 				<legend>Dados do contato</legend>
 				<div class="form-group">
-					<label for="name">Nome</label>
+					<label for="nome">Nome</label>
 					<div class="input-group">
-						<input type="text" name="name" required autofocus>
+						<input type="text" name="nome" required autofocus>
 					</div>
 				</div>
 				<div class="form-group">
@@ -31,15 +31,16 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="address">Endereço</label>
+					<label for="endereco">Endereço</label>
 					<div class="input-group">
-						<input type="text" name="address" required>
+						<input type="text" name="endereco" required>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="birthDate">Data Nascimento</label>
+					<label for="dataNascimento">Data Nascimento</label>
 					<div class="input-group">
-						<input type="date" name="birthDate" required>
+						<input type="date" name="dataNascimento" required>
+						<%-- <caelum:campoData id="dataNascimento" /> --%>
 					</div>
 				</div>
 				<div>
