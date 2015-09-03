@@ -29,11 +29,22 @@
 					<td>${contato.endereco}</td>
 					<td><fmt:formatDate value="${contato.dataNascimento.time}"
 							pattern="dd/MM/yyyy" /></td>
-					<td><a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a></td>
+					<td><a href="mvc?logica=AlteraContatoLogic&id=${contato.id}"><button
+								class="btn btn-large">
+								<span class="glyphicon glyphicon-pencil"></span></td>
+					<td><a href="mvc?logica=RemoveContatoLogic&id=${contato.id}"><button
+								class="btn btn-large">
+								<span class="glyphicon glyphicon-remove"></span>
+							</button> </a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	<a href="mvc?logica=AdicionaContatoLogic">
+		<button class="btn btn-large">
+			<span class="glyphicon glyphicon-plus"></span> Adicionar contato
+		</button>
+	</a>
 </div>
 <!-- fim .container -->
 <c:import url="rodape.jsp" />
