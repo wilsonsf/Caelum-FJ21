@@ -1,7 +1,7 @@
 package br.com.caelum.agenda.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.sql.Connection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -24,7 +24,6 @@ public class AdicionaContatoServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
 
 		Calendar dataNascimentoCalendar = null;
 		try {
@@ -44,19 +43,14 @@ public class AdicionaContatoServlet extends HttpServlet {
 		contato.setEndereco(request.getParameter("endereco"));
 		contato.setDataNascimento(dataNascimentoCalendar);
 
-		ContatoDao dao = new ContatoDao();
+		Connection connection = (Connection) request.getAttribute("conexao");
+		ContatoDao dao = new ContatoDao(connection);
 		dao.adiciona(contato);
 
 		RequestDispatcher rd = request
 				.getRequestDispatcher("/WEB-INF/jsp/contato-adicionado.jsp");
 		rd.forward(request, response);
 
-		/*
-		 * out.println("<html>"); out.println("<body>");
-		 * out.println("<h1>Contato " + contato.getNome() +
-		 * " adicionado com sucesso"); out.println("</body>");
-		 * out.println("</html>");
-		 */
 	}
 
 	@Override
