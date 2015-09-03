@@ -16,9 +16,9 @@
 	</c:forTokens>
 </c:if>
 
-<c:if test="${not empty cabecalhoScripts }">
-	<c:forTokens items="${cabecalhoScripts}" delims="," var="item">
-    	<link rel="stylesheet" href="assets/js/${item}">
+<c:if test="${not empty cabecalhoJS }">
+	<c:forTokens items="${cabecalhoJS}" delims="," var="item">
+    	<script src="assets/js/${item}.js"></script>
 	</c:forTokens>
 </c:if>
 

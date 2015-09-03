@@ -3,9 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:set var="cabecalhoCSS" scope="request">
-	js/jquery.css",testa,umdoistres,palavra separada
+	jquery
 </c:set>
-
+<c:set var="cabecalhoJS" scope="request">
+	jquery,jquery-ui
+</c:set>
 <c:set var="tituloDaPagina" value="FJ-21 Agenda: Adiciona Contato"
 	scope="request" />
 <c:import url="cabecalho.jsp" />
