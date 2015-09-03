@@ -29,18 +29,21 @@
 					<td>${contato.endereco}</td>
 					<td><fmt:formatDate value="${contato.dataNascimento.time}"
 							pattern="dd/MM/yyyy" /></td>
-					<td><a href="mvc?logica=AlteraContatoLogic&id=${contato.id}"><button
-								class="btn btn-large">
-								<span class="glyphicon glyphicon-pencil"></span></td>
-					<td><a href="mvc?logica=RemoveContatoLogic&id=${contato.id}"><button
-								class="btn btn-large">
+					<td><a href="mvc?logica=ExibeFormularioContatoLogic&id=${contato.id}">
+							<button class="btn btn-large">
+								<span class="glyphicon glyphicon-pencil"></span>
+							</button>
+					</a></td>
+					<td><a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">
+							<button class="btn btn-large">
 								<span class="glyphicon glyphicon-remove"></span>
-							</button> </a></td>
+							</button>
+					</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-	<a href="mvc?logica=AdicionaContatoLogic">
+	<a href="mvc?logica=ExibeFormularioContatoLogic">
 		<button class="btn btn-large">
 			<span class="glyphicon glyphicon-plus"></span> Adicionar contato
 		</button>

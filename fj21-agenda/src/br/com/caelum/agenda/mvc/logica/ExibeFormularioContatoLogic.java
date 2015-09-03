@@ -3,7 +3,7 @@ package br.com.caelum.agenda.mvc.logica;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class FormularioAdicionaContatoLogic implements Logica {
+public class ExibeFormularioContatoLogic implements Logica {
 
 	@Override
 	public String executa(HttpServletRequest request,
