@@ -3,14 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="assets/css/tarefas.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>FJ21 Tarefa: Adicionar Tarefa</title>
 </head>
 <body>
 	<h3>Adicionar tarefas</h3>
-	<form action="adicionarTarefa" method="post">
-		<textarea name="descricao" rows="5" cols="100"></textarea>
+	<form action="adicionaTarefa" method="post">
+		<textarea name="descricao" rows="5" cols="100"></textarea><br />
 		<input type="submit" value="Adicionar" />
 	</form>
 </body>
