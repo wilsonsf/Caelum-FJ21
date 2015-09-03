@@ -8,16 +8,22 @@ import br.com.caelum.tarefas.modelo.Tarefa;
 
 @Controller
 public class TarefasController {
+	private static final String path = "tarefa/";
+
+	/*
+	 * public static String getPath() { return TarefasController.path; }
+	 */
 
 	@RequestMapping("novaTarefa")
 	public String form() {
 		return "tarefa/formulario";
 	}
-	
+
+	@RequestMapping("adicionaTarefa")
 	public String adiciona(Tarefa tarefa) {
 		JdbcTarefaDao dao = new JdbcTarefaDao();
 		dao.adiciona(tarefa);
-		return "tarefa/adicionada";
+		return TarefasController.path + "adicionada";
 	}
 
 }
