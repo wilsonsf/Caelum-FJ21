@@ -5,7 +5,7 @@
 <c:import url="cabecalho.jsp" />
 <div class="container">
 	<table class="table table-responsive">
-		<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao" />
+		<%-- <jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao" /> --%>
 		<thead>
 			<tr>
 				<th>Id</th>
@@ -16,7 +16,7 @@
 			</tr>
 		</thead>
 		<tbody class="table-striped">
-			<c:forEach var="contato" items="${dao.lista}" varStatus="id">
+			<c:forEach var="contato" items="${contatos}" varStatus="id">
 				<tr style="background: ${id.count% 2== 0? '#AE8': '#FFF'}">
 					<td>${contato.id}</td>
 					<td>${contato.nome}</td>
