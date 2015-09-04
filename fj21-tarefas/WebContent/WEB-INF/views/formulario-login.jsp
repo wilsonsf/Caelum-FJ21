@@ -32,8 +32,9 @@
                     <input type="password" name="senha" />
                 </div>
             </div>
-            <button type="submit">
-                <span class="glyphicon glyphicon-ok"></span> Entrar nas tarefas
+            <button class="btn btn-primary btn-large" type="submit">
+                <!-- <span class="glyphicon glyphicon-ok"></span> --> 
+                Entrar nas tarefas
             </button>
         </form>
     </div>
