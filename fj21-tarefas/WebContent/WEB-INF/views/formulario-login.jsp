@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="assets/css/bootstrap.css">
-<title>FJ21 Tarefas: Login</title>
+
+<c:set var="cabecalhoCSS" scope="request"></c:set>
+<c:set var="cabecalhoJS" scope="request"></c:set>
+<c:set var="tituloDaPagina" value="${cursor}" scope="request" />
+
+<c:import url="<c:url value='/WEB-INF/cabecalho.jsp'/>" />
+
 </head>
 <body>
     <div class="container">
