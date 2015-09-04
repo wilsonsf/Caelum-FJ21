@@ -1,6 +1,9 @@
 package br.com.caelum.tarefas.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.caelum.tarefas.dao.JdbcTarefaDao;
@@ -16,11 +19,15 @@ public class TarefasController {
 
 	@RequestMapping("novaTarefa")
 	public String form() {
-		return "tarefa/formulario";
+		return TarefasController.path + "formulario";
 	}
 
 	@RequestMapping("adicionaTarefa")
-	public String adiciona(Tarefa tarefa) {
+	public String adiciona(@Valid Tarefa tarefa, BindingResult result) {
+		if(result.hasErrors()){
+			return TarefasController.path + "formulario";
+		}
+		
 		JdbcTarefaDao dao = new JdbcTarefaDao();
 		dao.adiciona(tarefa);
 		return TarefasController.path + "adicionada";
