@@ -27,7 +27,7 @@
 				<label for="finalizado">Finalizado?</label>
 				<div class="input-group">
 					<input type="checkbox" name="finalizado" value="true"
-						${tarefa.finalizado? 'checked' : '' } required>
+						${tarefa.finalizado? 'checked' : '' }>
 				</div>
 			</div>
 
