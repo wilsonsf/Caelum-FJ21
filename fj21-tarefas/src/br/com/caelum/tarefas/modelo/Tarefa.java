@@ -4,6 +4,8 @@ import java.util.Calendar;
 
 import javax.validation.constraints.*;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Tarefa {
 
 	private Long id;
@@ -12,6 +14,8 @@ public class Tarefa {
 	@Size(min = 5)
 	private String descricao;
 	private boolean finalizado;
+	
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Calendar dataFinalizacao;
 
 	public Long getId() {
