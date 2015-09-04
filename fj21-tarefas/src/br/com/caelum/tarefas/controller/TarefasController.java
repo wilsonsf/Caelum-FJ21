@@ -54,4 +54,11 @@ public class TarefasController {
 		model.addAttribute("tarefa", dao.buscaPorId(id));
 		return TarefasController.path + "mostra";
 	}
+	
+	@RequestMapping("alteraTarefa")
+	public String altera(Tarefa tarefa){
+		JdbcTarefaDao dao = new JdbcTarefaDao();
+		dao.altera(tarefa);
+		return "redirect:listaTarefas";
+	}
 }
