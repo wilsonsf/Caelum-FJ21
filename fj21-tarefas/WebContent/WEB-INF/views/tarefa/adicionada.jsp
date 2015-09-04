@@ -1,12 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" href="assets/css/bootstrap.css">
+<title>FJ21 Tarefas: Tarefa Adicionada</title>
 </head>
 <body>
-	<h3>Nova tarefa adicionada com sucesso!</h3>
+    <div class="container">
+        <h3>Nova tarefa adicionada com sucesso!</h3>
+    </div>
 </body>
 </html>

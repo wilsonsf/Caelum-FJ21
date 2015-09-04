@@ -7,10 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="assets/css/bootstrap.css">
 <script src="assets/js/jquery.js"></script>
-<title>Insert title here</title>
+<title>FJ21 Tarefas: Lista Tarefas</title>
 </head>
 <body>
-    <header class="header"></header>
     <div class="container">
         <a href="novaTarefa">
             <button class="btn">
