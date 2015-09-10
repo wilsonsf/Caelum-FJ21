@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
-<c:set var="cabecalhoCSS" scope="request"></c:set>
-<c:set var="cabecalhoJS" scope="request"></c:set>
-<c:set var="tituloDaPagina" value="Lista Tarefas" scope="request" />
-
-<c:import url="<c:url value='/WEB-INF/cabecalho.jsp'/>" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="assets/css/bootstrap.css">
+<script src="assets/js/jquery.js"></script>
+<title>FJ21 Tarefas: Lista Tarefas</title>
 </head>
 <body>
     <div class="container">
