@@ -3,41 +3,25 @@
 
 <c:set var="cabecalhoCSS" scope="request"></c:set>
 <c:set var="cabecalhoJS" scope="request"></c:set>
-<c:set var="tituloDaPagina" value="${cursor}" scope="request" />
+<c:set var="tituloDaPagina" value="Login" scope="request" />
 
-<c:import url="<c:url value='/WEB-INF/cabecalho.jsp'/>" />
-
-</head>
-<body>
-    <div class="container">
-        <!-- 
-            <div class="form-group">
-                <label></label>
-                <div class="input-group">
-                    <input type="text" name="" />
-                </div>
+<c:import url="/WEB-INF/views/cabecalho.jsp" />
+<div class="container">
+    <h2>Página de Login</h2>
+    <form action="efetuaLogin" method="POST">
+        <div class="form-group">
+            <label>Login</label>
+            <div class="input-group">
+                <input type="text" name="login" />
             </div>
-     -->
-
-        <h2>Página de Login das Tarefas</h2>
-        <form action="efetuaLogin" method="POST">
-            <div class="form-group">
-                <label>Login</label>
-                <div class="input-group">
-                    <input type="text" name="login" />
-                </div>
+        </div>
+        <div class="form-group">
+            <label>Senha</label>
+            <div class="input-group">
+                <input type="password" name="senha" />
             </div>
-            <div class="form-group">
-                <label>Senha</label>
-                <div class="input-group">
-                    <input type="password" name="senha" />
-                </div>
-            </div>
-            <button class="btn btn-primary btn-large" type="submit">
-                <!-- <span class="glyphicon glyphicon-ok"></span> -->
-                Entrar nas tarefas
-            </button>
-        </form>
-    </div>
-</body>
-</html>
+        </div>
+        <button class="btn btn-primary btn-large" type="submit">Entrar nas tarefas</button>
+    </form>
+</div> <!-- fim .container -->
+<c:import url="/WEB-INF/views/rodape.jsp" />

@@ -11,10 +11,10 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler) throws Exception {
 		String uri = request.getRequestURI();
-		if (uri.endsWith("loginForm") || uri.endsWith("efetuaLogin")
-				|| uri.contains("resources") || uri.contains("cabecalho.jsp")
-				|| uri.contains("rodape.jsp")) {
-			System.out.println(uri);
+
+		if (uri.endsWith("loginForm") 
+		 || uri.endsWith("efetuaLogin")
+		 || uri.contains("resources")) {
 			return true;
 		}
 
@@ -23,6 +23,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 		}
 
 		response.sendRedirect("loginForm");
+		System.err.println("Tentou acessar: "+uri);
 		return false;
 	}
 }
