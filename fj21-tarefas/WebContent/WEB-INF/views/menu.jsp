@@ -3,10 +3,12 @@
 
 <c:set var="cabecalhoCSS" scope="request"></c:set>
 <c:set var="cabecalhoJS" scope="request"></c:set>
-<c:set var="tituloDaPagina" value="Tarefa Adicionada" scope="request" />
+<c:set var="tituloDaPagina" value="Menu" scope="request" />
 
 <c:import url="/WEB-INF/views/cabecalho.jsp" />
 <div class="container">
-    <h3>Nova tarefa adicionada com sucesso!</h3>
+    <h2>Página inicial da Lista de tarefas</h2>
+    <p>Bem vindo, ${usuarioLogado.login}</p>
+    <a href="listaTarefas">Clique aqui</a> para acessar a lista de tarefas
 </div> <!-- fim .container -->
 <c:import url="/WEB-INF/views/rodape.jsp" />
