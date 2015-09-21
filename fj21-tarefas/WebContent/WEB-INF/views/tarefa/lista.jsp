@@ -38,7 +38,7 @@
                     </c:if></td>
                     <td><fmt:formatDate value="${tarefa.dataFinalizacao.time }"
                             pattern="dd/MM/yyyy" /></td>
-                    <td><a href="removeTarefa?id=${tarefa.id}">
+                    <td><a href="" onclick="removeTarefa(${tarefa.id})">
                             <button class="btn">
                                 <span class="glyphicon glyphicon-remove"></span>Remover
                             </button>
@@ -56,9 +56,14 @@
 <!-- fim .container -->
 <script>
     function finalizaAgora(id) {
-      $.post("finalizaTarefa", {'id' : id}, function(resposta) {
-    	$("#tarefa_" + id).html(resposta);
-    });
+        $.post("finalizaTarefa", {'id' : id}, function(resposta) {
+            $("#tarefa_" + id).html(resposta);
+        });
+    }
+    function removeTarefa(id) {
+    	$.post("removeTarefa", {'id' : id}, function(resposta) {
+    		$("#tarefa_" + id).closest("tr").hide();
+    	});
     }
   </script>
 <c:import url="/WEB-INF/views/rodape.jsp" />
