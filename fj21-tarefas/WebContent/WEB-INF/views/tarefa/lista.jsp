@@ -28,10 +28,10 @@
             </thead>
             <tbody>
                 <c:forEach items="${tarefas}" var="tarefa">
-                    <tr>
+                    <tr id="tarefa_${tarefa.id}">
                         <td>${tarefa.id}</td>
                         <td>${tarefa.descricao }</td>
-                        <td id="tarefa_${tarefa.id}"><c:if test="${tarefa.finalizado eq false }">
+                        <td><c:if test="${tarefa.finalizado eq false }">
                                 <a href="" onclick="finalizaAgora(${tarefa.id})">
                                     <button class="btn">
                                         <span class="glyphicon glyphicon-ok"></span> Finalizar agora
@@ -58,8 +58,8 @@
     </div>
     <script>
     function finalizaAgora(id) {
-      $.post("finalizaTarefa", {'id' : id}, function() {
-    	$("#tarefa_" + id).html("Finalizado");
+      $.post("finalizaTarefa", {'id' : id}, function(resposta) {
+    	$("#tarefa_" + id).html(resposta);
     });
     }
   </script>
