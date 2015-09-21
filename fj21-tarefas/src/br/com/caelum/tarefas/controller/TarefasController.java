@@ -65,8 +65,10 @@ public class TarefasController {
 	
 	@ResponseBody
 	@RequestMapping("finalizaTarefa")
-	public void finaliza(Long id){
+	public String finaliza(Long id, Model model){
 		JdbcTarefaDao dao = new JdbcTarefaDao();
 		dao.finaliza(id);
+		model.addAttribute("tarefa", dao.buscaPorId(id));
+		return "tarefa/finalizada";
 	}
 }
